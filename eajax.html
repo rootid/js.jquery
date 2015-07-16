@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+<body>
+
+<style>
+</style>
+
+<script>
+  //Turn into jquery object
+  $(document).ready(function () {
+     console.log("I am ready wo shortcut");
+
+    //http://services.odata.org/Experimental/OData/OData.svc/Products?$select=Name
+     //$.ajax({
+     //     url: "http://services.odata.org/Experimental/OData/OData.svc/Products?$select=Name"
+     //     ,success : function (data) {
+     //       console.log(data)
+     //     }
+     // });
+     //shortcut method
+     $.get("http://services.odata.org/Experimental/OData/OData.svc/Products?$select=Name",
+       function (data) {
+       console.log(data.value)
+       } );
+  });
+</script>
+ 
+
+</body>
+
+<!--
+    <script src="js/first.js"></script>
+  -->
+</html>

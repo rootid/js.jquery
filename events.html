@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+<body>
+
+<style>
+  div {
+     margin : 2px;font:bold 9pt 'Segoe UI'
+  }
+  .parent {
+     border:solid 2px black
+  }
+
+  .child {
+     border:solid 1px black;
+     margin : 4px
+  }
+</style>
+
+<script>
+  //Turn into jquery object
+  $(document).ready(function () {
+     console.log("I am ready wo shortcut");
+
+    $("div").on ("click",function(ev) {
+      console.log(ev.currentTarget.dataset.name);
+
+      //console.log(ev);
+      //To stop the bubble up the environment
+      ev.stopPropagation();
+  });
+
+    $("#turnoff").on ("click",function(ev) {
+      console.log(ev.currentTarget.dataset.name);
+      $("div").off();
+
+  });
+
+  });
+</script>
+ 
+<div class="parent" data-name="parent">
+  parent
+  <div class="child" data-name="child1"> child1 </div>
+  <div class="child" data-name="child2"> child2 </div>
+  <div class="child" data-name="child3"> child3 </div>
+</div>
+
+<button id="turnoff">
+  turn off
+</button>
+
+<button id="turnon">
+  turn on
+</button>
+
+</body>
+
+<!--
+    <script src="js/first.js"></script>
+  -->
+</html>
