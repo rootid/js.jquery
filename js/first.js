@@ -1,0 +1,3 @@
+
+hdiv.innerHTML="Bye"
+

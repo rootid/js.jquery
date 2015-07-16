@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+<body>
+
+<script>
+  $(function(){
+        console.log("I'm Ready")
+        hdiv.innerHTML = "Bye";
+      });
+
+  //Turn into jquery object
+  $(document).ready(function () {
+      console.log("I am ready wo shortcut");
+      hdiv.innerHTML = "Again hello";
+      //$("*").css("color","blue");
+      $("#hdiv").css("color","blue");
+      //content added but not attached to DOM
+      $("#hdiv").add("<div>added content</div>")
+
+      $("h1,h2").css("background-color","red").css("color","blue");
+
+      $("#xadd").html("<em>added content</em> !!!")
+
+
+    });
+
+
+</script>
+  
+<div id="hdiv">
+  Hello world
+</div>
+
+<h1>
+  first heading 
+</h1>
+
+<h2>
+  second heading 
+</h2>
+
+
+<div id="xadd">
+  append the data
+</div>
+
+</body>
+
+<!--
+    <script src="js/first.js"></script>
+  -->
+</html>
